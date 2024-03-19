@@ -6,7 +6,13 @@ pipeline {
             steps {
                 script {
                     dir('main-project-terraform') {
+                        sh 'ls'
                     }
+                }
+            }
+            steps {
+                script {
+                    sh 'ls'
                 }
             }
         }
