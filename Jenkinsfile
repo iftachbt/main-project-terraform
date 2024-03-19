@@ -21,9 +21,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 script {
-                    dir('main-project-terraform') {
-                        sh 'terraform plan -out=tfplan'
-                    }
+                    sh 'terraform plan'
                 }
             }
         }
@@ -31,9 +29,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 script {
-                    dir('main-project-terraform') {
-                        sh 'terraform apply tfplan'
-                    }
+                    sh 'terraform apply -auto-approve'
                 }
             }
         }
