@@ -6,7 +6,6 @@ pipeline {
             steps {
                 script {
                     sh 'ls'
-                    }
                 }
             }
         }
@@ -15,7 +14,6 @@ pipeline {
             steps {
                 script {
                     sh 'terraform init'
-                    }
                 }
             }
         }
