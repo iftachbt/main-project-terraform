@@ -3,7 +3,10 @@ pipeline {
 
     stages {
         stage('Fetch Terraform Code') {
-            
+            sh 'ls'
+            sh 'pws'
+            sh 'git --version'
+            sh 'cat Jenkinsfile'
         }
         
         stage('Terraform Init') {
