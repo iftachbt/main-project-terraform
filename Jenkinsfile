@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     stages {
-        steps {
+        stage('TEST Terraform Code') {
+            steps {
                 script {
                     dir('main-project-terraform') {
                         sh 'ls'
@@ -11,7 +12,8 @@ pipeline {
                         sh 'cat Jenkinsfile'
                     }
                 }
-            
+            }
+        }
         
         stage('Terraform Init') {
             steps {
@@ -42,5 +44,5 @@ pipeline {
                 }
             }
         }
-    }
+    } 
 }
