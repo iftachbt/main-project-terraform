@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Fetch Terraform Code') {
+            steps {
+                git 'https://github.com/iftachbt/main-project-terraform.git'
+            }
+        }
+        
+        stage('Terraform Init') {
+            steps {
+                script {
+                    dir('main-project-terraform') {
+                        sh 'terraform init'
+                    }
+                }
+            }
+        }
+        
+        stage('Terraform Plan') {
+            steps {
+                script {
+                    dir('main-project-terraform') {
+                        sh 'terraform plan -out=tfplan'
+                    }
+                }
+            }
+        }
+        
+        stage('Terraform Apply') {
+            steps {
+                script {
+                    dir('main-project-terraform') {
+                        sh 'terraform apply tfplan'
+                    }
+                }
+            }
+        }
+    }
+}
