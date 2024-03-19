@@ -2,12 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Fetch Terraform Code') {
-            sh 'ls'
-            sh 'pws'
-            sh 'git --version'
-            sh 'cat Jenkinsfile'
-        }
+        steps {
+                script {
+                    dir('main-project-terraform') {
+                        sh 'ls'
+                        sh 'pws'
+                        sh 'git --version'
+                        sh 'cat Jenkinsfile'
+                    }
+                }
+            
         
         stage('Terraform Init') {
             steps {
