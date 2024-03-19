@@ -6,8 +6,6 @@ pipeline {
             steps {
                 script {
                     sh 'ls'
-                    dir('main-project-terraform') {
-                        sh 'ls'
                     }
                 }
             }
@@ -16,8 +14,7 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 script {
-                    dir('main-project-terraform') {
-                        sh 'terraform init'
+                    sh 'terraform init'
                     }
                 }
             }
