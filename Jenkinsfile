@@ -5,14 +5,10 @@ pipeline {
         stage('TEST Terraform Code') {
             steps {
                 script {
+                    sh 'ls'
                     dir('main-project-terraform') {
                         sh 'ls'
                     }
-                }
-            }
-            steps {
-                script {
-                    sh 'ls'
                 }
             }
         }
