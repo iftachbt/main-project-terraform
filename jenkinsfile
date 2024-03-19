@@ -3,9 +3,7 @@ pipeline {
 
     stages {
         stage('Fetch Terraform Code') {
-            steps {
-                git 'https://github.com/iftachbt/main-project-terraform.git'
-            }
+            
         }
         
         stage('Terraform Init') {
