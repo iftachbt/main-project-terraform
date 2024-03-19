@@ -6,10 +6,6 @@ pipeline {
             steps {
                 script {
                     dir('main-project-terraform') {
-                        sh 'ls'
-                        sh 'pws'
-                        sh 'git --version'
-                        sh 'cat Jenkinsfile'
                     }
                 }
             }
