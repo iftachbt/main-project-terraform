@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('TEST Terraform Code') {
+        stage('check dir') {
             steps {
                 script {
                     sh 'ls'
