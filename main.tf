@@ -16,8 +16,8 @@ sudo apt-get update
 sudo apt-get install -y docker.io
 sudo systemctl start docker
 echo "Pulling and running Docker container..."
-sudo docker pull iftachbt/sumimage:latest
-sudo docker run -d -p 5000:5000 iftachbt/sumimage:latest
+sudo docker pull iftachbt/web-project:latest
+sudo docker run -d -p 5000:5000 iftachbt/web-project:latest
 EOF
 }
 output "public_ip" {
