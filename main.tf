@@ -19,10 +19,10 @@ echo "Pulling and running Docker container..."
 sudo docker pull iftachbt/web-project:latest
 
 echo "Fetching public IP address..."
-PUBLIC_IP=$$(curl -s https://ipv4.icanhazip.com)
+REACT_APP_PUBLIC_IP=$(curl -s https://ipv4.icanhazip.com)
 
 echo "Starting Docker container with public IP address..."
-sudo docker run -d -p 5000:5000 -e "PUBLIC_IP=$${PUBLIC_IP}" iftachbt/web-project:latest
+sudo docker run -d -p 5000:5000 -e "REACT_APP_PUBLIC_IP=$${REACT_APP_PUBLIC_IP}" iftachbt/web-project:latest
 EOF
 }
 output "public_ip" {
